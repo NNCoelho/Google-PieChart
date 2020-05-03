@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Pie Chart</title>
+    <script src="assets/loader.js"></script>
+</head>
+<body>
+    <h3>Géneros do Grupo</h3>
+    <div id="chart"></div>
+
+    <script>
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(desenhar);
+
+        function desenhar(){
+
+            var dados = new google.visualization.DataTable();
+            dados.addColumn('string', 'Generos');
+            dados.addColumn('number', 'Totais');
+            dados.addRows([
+                ['Masculino', 50],
+                ['Feminino', 60]
+            ]);
+
+            var opcoes = {
+                width: 500,
+                height: 400,
+                colors: ['#ff0000', '#ff00ff'],
+                chartArea: {
+                    width: '100%',
+                    height: '100%'
+                },
+                is3D: true
+            }
+
+            var chart = new google.visualization.PieChart(document.getElementById('chart'));
+            chart.draw(dados, opcoes);
+        }
+
+    </script>
+
+</body>
+</html>
