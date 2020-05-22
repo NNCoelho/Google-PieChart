@@ -1,2 +1,3 @@
 # Google-PieChart
-Google - Pie Chart - HTML5 &amp; JavaScript
+
+Google Charts - Pie Chart - HTML5 &amp; JavaScript
